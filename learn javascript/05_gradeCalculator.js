@@ -7,6 +7,7 @@ document.querySelector('.form').addEventListener("submit", (event) => {
      let urdu = + document.querySelector(".urdu").value
      let islamiat = + document.querySelector(".islamiat").value
      let math = + document.querySelector(".math").value
+     let grade = document.querySelector(".grade")
 
      english = english <= 100 ? english : "Enter Valid Number"
      urdu = urdu <= 100 ? urdu : "Enter Valid Number"
@@ -16,30 +17,44 @@ document.querySelector('.form').addEventListener("submit", (event) => {
      if(english > 30 ){
           document.querySelector(".engObt").style.color = 'darkgreen'
           document.querySelector(".engObt").style.backgroundColor = 'lightgreen'
+          document.querySelector(".enRemarks").innerHTML = 'PASS'
      }else {
           document.querySelector(".engObt").style.color = 'red'
-          document.querySelector(".engObt").style.backgroundColor = 'pink'    
+          document.querySelector(".engObt").style.backgroundColor = 'pink' 
+          document.querySelector(".enRemarks").innerHTML = 'FAIL'
      }
      if(urdu > 30 ){
           document.querySelector(".urduObt").style.color = 'darkgreen'
           document.querySelector(".urduObt").style.backgroundColor = 'lightgreen'
+          document.querySelector(".urRemarks").innerHTML = 'PASS'
+
      }else {
           document.querySelector(".urduObt").style.color = 'red'
-          document.querySelector(".urduObt").style.backgroundColor = 'pink'    
+          document.querySelector(".urduObt").style.backgroundColor = 'pink' 
+          document.querySelector(".urRemarks").innerHTML = 'FAIL'
+   
      }
      if(math > 30 ){
           document.querySelector(".mathObt").style.color = 'darkgreen'
           document.querySelector(".mathObt").style.backgroundColor = 'lightgreen'
+          document.querySelector(".maRemarks").innerHTML = 'PASS'
+
      }else {
           document.querySelector(".mathObt").style.color = 'red'
-          document.querySelector(".mathObt").style.backgroundColor = 'pink'    
+          document.querySelector(".mathObt").style.backgroundColor = 'pink'
+          document.querySelector(".maRemarks").innerHTML = 'FAIL'
+    
      }
      if(islamiat > 30 ){
           document.querySelector(".islObt").style.color = 'darkgreen'
           document.querySelector(".islObt").style.backgroundColor = 'lightgreen'
+          document.querySelector(".isRemarks").innerHTML = 'PASS'
+
      }else {
           document.querySelector(".islObt").style.color = 'red'
-          document.querySelector(".islObt").style.backgroundColor = 'pink'    
+          document.querySelector(".islObt").style.backgroundColor = 'pink'  
+          document.querySelector(".isRemarks").innerHTML = 'FAIL'
+  
      }
 
      document.querySelector(".usernameP").innerHTML = `${username} (${rollNo})`
@@ -53,6 +68,27 @@ document.querySelector('.form').addEventListener("submit", (event) => {
           document.querySelector(".obtainTotal").innerHTML = english + urdu + math + islamiat
           const percentage = (obtMarks/400)*100
           printer.innerHTML = `${percentage}%`
+          if(english > 30 && urdu > 30 && math > 30 && islamiat > 30 ){
+               if(percentage >= 90 ){
+               grade.innerHTML = 'A<sup>+1</sup>'
+          } else if ( percentage >= 80 ){
+               grade.innerHTML = 'A<sup>+</sup>'
+          }else if ( percentage >= 70 ){
+               grade.innerHTML = 'A'
+          }else if ( percentage >= 60 ){
+               grade.innerHTML = 'B'
+          }else if ( percentage >= 50 ){
+               grade.innerHTML = 'C'
+          }else if ( percentage >= 40 ){
+               grade.innerHTML = 'D'
+          }else if ( percentage >= 30 ){
+               grade.innerHTML = 'E'
+          }else if ( percentage < 30 ){
+               grade.innerHTML = 'FAIL'
+          }
+     }else {
+          grade.innerHTML = 'FAIL'
+     }
      } else{
           document.querySelector(".obtainTotal").innerHTML = 'Enter vlaid Numbers'
      }
