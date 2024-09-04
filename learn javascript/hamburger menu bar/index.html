@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Menu bar</title>
+    <link rel="stylesheet" href="./style.css">
+    <!--  * cdn link -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- <h1>Hamburger Menu Bar</h1> -->
+
+    <nav>
+        <div class="navbar">
+            <div class="heading">Apni Website</div>
+            <div class="hamburger">
+                <div class="icon1">
+                    <i class='bx bx-dots-vertical-rounded'></i>
+                </div>
+                <div class="icon2">
+                    <i class='bx bx-x'></i>
+                </div>
+                <!-- <input type="checkbox" class="checkbox"> -->
+            </div>
+            <ul class="links">
+                <li>link poka</li>
+                <li>link poka</li>
+                <li>link poka</li>
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        const checkbox1 = document.querySelector(".icon1")
+        console.log("checkbox =>", checkbox1)
+
+        checkbox1.addEventListener("click", (event) => {
+
+            event.preventDefault()
+
+            // console.log("hi")
+            console.log(checkbox1.children[0].classList[1])
+
+            if (checkbox1.children[0].classList[1] == "bx-dots-vertical-rounded") {
+
+                console.log("pass")
+
+                checkbox1.children[0].classList.remove("bx-dots-vertical-rounded")
+
+                checkbox1.children[0].classList.add("bx-x")
+
+                document.querySelector(".links").style.transform = "translateX(0px)"
+
+            } else if (checkbox1.children[0].classList[1] == "bx-x") {
+
+                console.log("fail")
+
+                checkbox1.children[0].classList.remove("bx-x")
+
+                checkbox1.children[0].classList.add("bx-dots-vertical-rounded")
+
+                document.querySelector(".links").style.transform = "translateX(-200px)"
+            }
+
+
+        })
+    </script>
+</body>
+
+</html>

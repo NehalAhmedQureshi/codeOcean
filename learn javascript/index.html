@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-    <script src="./01_alertAndPrompts.js"></script>
-</body>
+  </head>
+
+  <body>
+    <h1>Result Generator</h1>
+    <form class="form">
+      <input
+        type="text"
+        placeholder="Enter your name"
+        class="username"
+        required
+      />
+      <input
+        type="number"
+        placeholder="Enter your Roll Number"
+        class="rollNumner"
+        required
+      />
+      <input
+        type="number"
+        minlength="1"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        maxlength="3"
+        placeholder="Enter your English obtaining number from 100"
+        class="english"
+        required
+      />
+      <input
+        type="number"
+        minlength="1"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        maxlength="3"
+        placeholder="Enter your Math obtaining number from 100 "
+        class="math"
+        required
+      />
+      <input
+        type="number"
+        minlength="1"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        maxlength="3"
+        placeholder="Enter your Urdu obtaining number from 100 "
+        class="urdu"
+        required
+      />
+      <input
+        type="number"
+        minlength="1"
+        aria-valuemax="100"
+        aria-valuemin="0"
+        maxlength="3"
+        placeholder="Enter your Islamiat obtaining number from 100 "
+        class="islamiat"
+        required
+      />
+      <button type="submit">submit</button>
+    </form>
+
+    <table border="2">
+      <tr>
+        <th colspan="4" class="usernameP">---</th>
+      </tr>
+      <tr>
+        <th>S.No</th>
+        <th>Subjects</th>
+        <th>Total.Marks</th>
+        <th>Obt.Marks</th>
+      </tr>
+      <tr>
+        <th>1.</th>
+        <th>English</th>
+        <th class="engObt">00</th>
+        <th>100</th>
+      </tr>
+      <tr>
+        <th>2.</th>
+        <th>Urdu</th>
+        <th class="urduObt">00</th>
+        <th>100</th>
+      </tr>
+      <tr>
+        <th>3.</th>
+        <th>Islamiat</th>
+        <th class="islObt">00</th>
+        <th>100</th>
+      </tr>
+      <tr>
+        <th>4.</th>
+        <th>Math</th>
+        <th class="mathObt">00</th>
+        <th>100</th>
+      </tr>
+      <tr>
+        <th class="percent">00%</th>
+        <th style="text-align: end">Grand Total</th>
+        <th class="grandTotal">400</th>
+        <th class="obtainTotal">000</th>
+      </tr>
+    </table>
+    <!-- <div class="showresult"></div> -->
+    <script type="module" src="05_gradeCalculator.js"></script>
+  </body>
 </html>
